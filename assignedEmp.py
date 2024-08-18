@@ -133,7 +133,6 @@ class EmpPage(tk.Tk):
             res = cursor.fetchone()
             vMaintenanceDue = res[0]
       
-
 if __name__ == "__main__":
     app = EmpPage()
     app.mainloop()
