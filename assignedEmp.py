@@ -7,7 +7,7 @@ from customtkinter import CTkComboBox, CTkButton
 import mysql.connector
 
 from connectionSQL import connection, cursor
-
+from twilio.rest import Client
 
 class EmpPage(tk.Tk):
     def __init__(self, dbWind=None):
@@ -131,6 +131,7 @@ class EmpPage(tk.Tk):
             query = f"SELECT vMaintenanceDue FROM VehicleInfo WHERE vNumber = '{x[3]}'"
             cursor.execute(query)
             res = cursor.fetchone()
+            vMaintenanceDue = res[0]
       
 if __name__ == "__main__":
     app = EmpPage()
