@@ -129,23 +129,6 @@ class VehicleInfo(tk.Tk):
             vNumLab = ctk.CTkLabel(container2, text="Maintenance Due:", font=("Arial", 15, "bold"))
             vNumLab.pack(padx=(10, 0), pady=5, side=LEFT)
 
-            current_date = datetime.now().date()
-
-            if x[5] == current_date:
-                from twilio.rest import Client
-
-                account_sid = 'AC0b4943acc3c8a18dbcb6b3cbcd770fa9'
-                auth_token = 'e842c23dc5247d81e4afa55ec783c86a'
-                client = Client(account_sid, auth_token)
-
-                message = client.messages.create(
-                    from_='whatsapp:+14155238886',
-                    body=f'        NOTE\n'
-                         f'Vehicle Number: {x[0]}\n'
-                         f'Maintenance Due: {x[5]}',
-                    to='whatsapp:+917045216622'
-                )
-
             vNum = ctk.CTkLabel(container2, text=x[5], font=("Arial", 15))
             vNum.pack(pady=5, side=LEFT)
 
