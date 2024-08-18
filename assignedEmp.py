@@ -132,34 +132,7 @@ class EmpPage(tk.Tk):
             cursor.execute(query)
             res = cursor.fetchone()
             vMaintenanceDue = res[0]
-            # print("THIS",vMaintenanceDue)
-
-            account_sid = 'AC0b4943acc3c8a18dbcb6b3cbcd770fa9'
-            auth_token = 'e842c23dc5247d81e4afa55ec783c86a'
-            client = Client(account_sid, auth_token)
-
-            # message = client.messages.create(
-            #     from_='whatsapp:+14155238886',
-            #     body=f'Dear {x[1]},\n'
-            #          f'Vehicle Assigned: {x[0]}\n'
-            #          f'Vehicle Name: {vName}',
-            #     to=f'whatsapp:+{x[2]}'
-            # )
-
-            if vMaintenanceDue == current_date:
-                account_sid = 'AC0b4943acc3c8a18dbcb6b3cbcd770fa9'
-                auth_token = 'e842c23dc5247d81e4afa55ec783c86a'
-                client = Client(account_sid, auth_token)
-
-                message = client.messages.create(
-                    from_='whatsapp:+14155238886',
-                    body=f'Dear {x[1]},\n'
-                         f'Vehicle Number: {x[3]}\n'
-                         f'Maintenance Due: {x[5]}',
-                    to='whatsapp:+919769295104'
-                )
-
-
+      
 
 if __name__ == "__main__":
     app = EmpPage()
