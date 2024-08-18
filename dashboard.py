@@ -5,7 +5,6 @@ import time
 import matplotlib.pyplot as plt
 import pandas as pd
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
-from twilio.rest import Client
 
 from assignedEmp import EmpPage
 from connectionSQL import cursor, connection
